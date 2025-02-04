@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-02 20:13:03.224122",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cart_id",
+  "user_id",
+  "products",
+  "total",
+  "discounted_total",
+  "total_products",
+  "total_quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "cart_id",
+   "fieldtype": "Data",
+   "label": "Cart Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "User Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "products",
+   "fieldtype": "Table",
+   "label": "Products",
+   "options": "Product"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discounted_total",
+   "fieldtype": "Currency",
+   "label": "Discounted Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_products",
+   "fieldtype": "Int",
+   "label": "Total Products",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Int",
+   "label": "Total Quantity",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_virtual": 1,
+ "links": [],
+ "modified": "2025-02-04 23:06:44.287213",
+ "modified_by": "Administrator",
+ "module": "Virtual Online Shopping",
+ "name": "Carts",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
