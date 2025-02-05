@@ -15,7 +15,6 @@ class Carts(Document):
 			all_data = get_data()
 			carts = []
 			for cart in all_data:
-				print(f'\n\n{cart}\n\n')
 				carts.append(
 					{
 					'name':cart.get('id'),
