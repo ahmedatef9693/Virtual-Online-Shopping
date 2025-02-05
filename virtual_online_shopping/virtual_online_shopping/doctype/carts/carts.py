@@ -5,7 +5,6 @@ import frappe
 from frappe.model.document import Document
 from virtual_online_shopping.api_connect import get_data,json
 from virtual_online_shopping.cache_helpers import get_from_cache, set_cache
-
 class Carts(Document):
 	@staticmethod
 	def get_carts():
@@ -16,10 +15,12 @@ class Carts(Document):
 			all_data = get_data()
 			carts = []
 			for cart in all_data:
+				print(f'\n\n{cart}\n\n')
 				carts.append(
 					{
 					'name':cart.get('id'),
 					'cart_id':cart.get('id'),
+					'products':cart.get('products'),
 					'total':cart.get('total'),
 					'discounted_total':cart.get('discountedTotal'),
 					'user_id':cart.get('userId'),

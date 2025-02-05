@@ -26,4 +26,12 @@ def show_data(carts):
         print(f'cart : {cart["products"]}')
 
 def get_carts(response):
-    return json.loads(response.text).get('carts') 
+    data = json.loads(response.text).get('carts')
+    for cart in data:
+        for product in cart.get('products'):
+            product['discount_percentage'] =product['discountPercentage']
+            product['discount_total'] = product['discountedTotal']
+            product['thumbnail_link'] = product['thumbnail']
+            del product['discountPercentage']
+            del product['discountedTotal']
+    return data

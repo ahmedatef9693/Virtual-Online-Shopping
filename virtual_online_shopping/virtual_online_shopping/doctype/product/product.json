@@ -6,7 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "product_id",
+  "id",
   "title",
   "quantity",
   "price",
@@ -16,12 +16,6 @@
   "thumbnail_link"
  ],
  "fields": [
-  {
-   "fieldname": "product_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Product Id"
-  },
   {
    "fieldname": "title",
    "fieldtype": "Data",
@@ -41,6 +35,23 @@
    "label": "Price"
   },
   {
+   "fieldname": "product_thumbnail",
+   "fieldtype": "Image",
+   "label": "Product Thumbnail",
+   "options": "thumbnail_link"
+  },
+  {
+   "fieldname": "thumbnail_link",
+   "fieldtype": "Attach Image",
+   "label": "Thumbnail Link"
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Id"
+  },
+  {
    "fieldname": "discount_percentage",
    "fieldtype": "Percent",
    "in_list_view": 1,
@@ -51,24 +62,13 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Discount Total"
-  },
-  {
-   "fieldname": "product_thumbnail",
-   "fieldtype": "Image",
-   "label": "Product Thumbnail"
-  },
-  {
-   "fieldname": "thumbnail_link",
-   "fieldtype": "Attach Image",
-   "label": "Thumbnail Link",
-   "options": "product_thumbnail"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_virtual": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-02 20:31:11.326147",
+ "modified": "2025-02-05 17:41:03.059019",
  "modified_by": "Administrator",
  "module": "Virtual Online Shopping",
  "name": "Product",
