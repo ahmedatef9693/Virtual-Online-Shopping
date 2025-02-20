@@ -5,6 +5,10 @@ import frappe
 from frappe.model.document import Document
 from virtual_online_shopping.api_connect import get_data,json
 from virtual_online_shopping.cache_helpers import get_from_cache, set_cache
+from frappe.utils import cint
+
+
+
 class Carts(Document):
 	@staticmethod
 	def get_carts():
@@ -38,7 +42,6 @@ class Carts(Document):
 		pass
 
 	def load_from_db(self):
-		
 		carts = Carts.get_carts()
 		document =  Carts.get_document(self.name,carts)
 		super(Document,self).__init__(document)
@@ -47,7 +50,14 @@ class Carts(Document):
 
 	@staticmethod
 	def get_list(args):
-		carts = Carts.get_carts()
+		start = cint(args.get('limit_start'))
+		page_length = cint(args.get('limit_page_length'))
+		carts = []
+		if start >= 0 and page_length > 0:
+			print(f'yeees')
+			carts = Carts.get_carts()[start:start + page_length]
+		else:
+			carts = Carts.get_carts()
 		return carts
 
 	@staticmethod
