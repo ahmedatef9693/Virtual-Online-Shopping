@@ -54,7 +54,6 @@ class Carts(Document):
 		page_length = cint(args.get('limit_page_length'))
 		carts = []
 		if start >= 0 and page_length > 0:
-			print(f'yeees')
 			carts = Carts.get_carts()[start:start + page_length]
 		else:
 			carts = Carts.get_carts()
